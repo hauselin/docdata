@@ -21,6 +21,7 @@ display_doc_md <- function(x) {
     message("--- DOCUMENTATION END ---")
 }
 
+
 #' @keywords internal
 read_doc_md <- function(x) {
     conn <- file(x, open = "r")

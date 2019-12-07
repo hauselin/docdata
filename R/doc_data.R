@@ -28,7 +28,7 @@ doc_data <- function(x, overwrite = FALSE) {
     }
 
     # read template md doc
-    template_doc <- read_doc_md("./inst/extdata/template.md")
+    # template_doc <- read_doc_md("./inst/extdata/template.md")
     if (overwrite) {
         existing_doc <- read_doc_md(outfile)
     }
