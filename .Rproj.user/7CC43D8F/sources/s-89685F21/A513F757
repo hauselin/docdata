@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1575758714698.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "A513F757",
+    "lastKnownWriteTime" : 1575760660,
+    "last_content_update" : 1575760660054,
+    "path" : "~/Dropbox/Working Projects/R_packages/docdata/R/doc_data.R",
+    "project_path" : "R/doc_data.R",
+    "properties" : {
+        "cursorPosition" : "11,18",
+        "scrollLine" : "0"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
