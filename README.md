@@ -79,7 +79,7 @@ dataset in your working directory.)
     ## Columns
     
     * Rows: 32
-    * Columns: 11
+    * Columns: 4
     
     | Column  | Type     | Description |
     | ------- | -------- | ----------- |
