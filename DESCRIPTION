@@ -20,3 +20,5 @@ Imports:
 RoxygenNote: 6.1.1
 Suggests: knitr, rmarkdown
 VignetteBuilder: knitr
+URL: https://github.com/hauselin/docdata
+BugReports: https://github.com/hauselin/docdata/issues
