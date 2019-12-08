@@ -1,6 +1,6 @@
 Package: docdata
 Type: Package
-Title: Generates documentation for datasets
+Title: Generate documentation for datasets
 Version: 0.0.0.9001
 Authors@R: 
     person(given = "Hause",
@@ -10,7 +10,6 @@ Authors@R:
            comment = c(ORCID = "0000-0003-4590-7039"))
 Maintainer: Hause Lin <hauselin@gmail.com>
 Description: Generate documentations for datasets semi-automatically. 
-    Use four spaces when indenting paragraphs within the Description.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
