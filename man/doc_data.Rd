@@ -2,14 +2,17 @@
 % Please edit documentation in R/doc_data.R
 \name{doc_data}
 \alias{doc_data}
-\title{doc_data function}
+\title{Generate documentation in markdown for a dataset}
 \usage{
 doc_data(x, overwrite = FALSE)
 }
 \arguments{
-\item{x}{path/directory to dataset}
+\item{x}{path/directory to dataset (e.g., csv/txt file)}
 
 \item{overwrite}{whether to overwrite documentation (defaults to FALSE)}
+}
+\value{
+markdown file with the same name as input x in the same directory
 }
 \description{
 Generates documentation for a dataset

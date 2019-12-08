@@ -1,10 +1,15 @@
 Package: docdata
 Type: Package
-Title: What the Package Does (Title Case)
-Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
+Title: Generates documentation for datasets
+Version: 0.0.0.9003
+Authors@R: 
+    person(given = "Hause",
+           family = "Lin",
+           role = c("aut", "cre"),
+           email = "hauselin@gmail.com", 
+           comment = c(ORCID = "0000-0003-4590-7039"))
+Maintainer: Hause Lin <hauselin@gmail.com>
+Description: Generate documentations for datasets semi-automatically. 
     Use four spaces when indenting paragraphs within the Description.
 License: MIT + file LICENSE
 Encoding: UTF-8
@@ -13,4 +18,3 @@ Imports:
     data.table,
     stringi
 RoxygenNote: 6.1.1
-Depends: R (>= 2.10)

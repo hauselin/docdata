@@ -30,6 +30,8 @@ read_doc_md <- function(x) {
     return(linn)
 }
 
+#' @import data.table
+#' @import stringi
 #' @keywords internal
 mdtable2dat <- function(x) {
     doc <- read_doc_md(x)
@@ -46,6 +48,8 @@ mdtable2dat <- function(x) {
     data.table::data.table(temp_dat)
 }
 
+#' @import data.table
+#' @import stringi
 #' @keywords internal
 string2dat <- function(x) {
     x <- x[-c(1, 2)]
@@ -59,6 +63,8 @@ string2dat <- function(x) {
     data.table::data.table(temp_dat)
 }
 
+#' @import data.table
+#' @import stringi
 #' @keywords internal
 dat2string <- function(datainfo) {
 

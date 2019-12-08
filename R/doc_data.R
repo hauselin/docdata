@@ -1,13 +1,14 @@
-#' @title doc_data function
+#' @title Generate documentation in markdown for a dataset
 #' @name doc_data
 #'
 #' @description Generates documentation for a dataset
-#' @param x path/directory to dataset
+#' @param x path/directory to dataset (e.g., csv/txt file)
 #' @param overwrite whether to overwrite documentation (defaults to FALSE)
 #'
 #' @author Hause Lin
 #' @usage doc_data(x, overwrite = FALSE)
 #'
+#' @return markdown file with the same name as input x in the same directory
 #' @import data.table
 #' @import stringi
 #' @examples
@@ -29,6 +30,7 @@ doc_data <- function(x, overwrite = FALSE) {
 
     # read template md doc
     # template_doc <- read_doc_md("./inst/extdata/template.md")
+    # save(template_doc, file = "./R/sysdata.rda")
     if (overwrite) {
         existing_doc <- read_doc_md(outfile)
     }
