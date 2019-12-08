@@ -1,7 +1,7 @@
 Package: docdata
 Type: Package
 Title: Generate documentation for datasets
-Version: 0.0.0.9001
+Version: 0.9.0
 Authors@R: 
     person(given = "Hause",
            family = "Lin",
@@ -21,3 +21,4 @@ Suggests: knitr, rmarkdown
 VignetteBuilder: knitr
 URL: https://github.com/hauselin/docdata
 BugReports: https://github.com/hauselin/docdata/issues
+Depends: R (>= 3.5.0)
