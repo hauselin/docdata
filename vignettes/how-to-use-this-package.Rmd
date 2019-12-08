@@ -146,24 +146,23 @@ Example usage: `doc_refresh("mtcars.csv")` or `doc_refresh("mtcars.md")`
 ```
 | Column  | Type     | Description           |
 | ------- | -------- | --------------------- |
-| mpg     | numeric  | milespergallon           |
-| cyl     | numeric  | numberofcylinders            |
-| disp    | numeric  |       displacement(cu.in.)           |
+| mpg     | numeric  | miles per gallon           |
+| cyl     | numeric  | number of cylinders            |
+| disp    | numeric  |       displacement (cu.in.)           |
 | fakecolumn     | numeric  | non-existent column            |
 ```
 
 * After running `doc_refresh()`: spacing are cleaned and new columns are deleted/added
 
 ```
-| Column  | Type     | Description           |
-| ------- | -------- | --------------------- |
-| mpg     | numeric  | milespergallon        |
-| cyl     | numeric  | numberofcylinders     |
-| disp    | numeric  | displacement(cu.in.)  |
-| hp      | numeric  |                       |
-| drat    | numeric  |                       |
+| Column  | Type     | Description            |
+| ------- | -------- | ---------------------- |
+| mpg     | numeric  | miles per gallon       |
+| cyl     | numeric  | number of cylinders    |
+| disp    | numeric  | displacement (cu.in.)  |
+| hp      | numeric  |                        |
+| drat    | numeric  |                        |
 ```
-
 
 ## Step 5: Share your dataset + documentation
 
