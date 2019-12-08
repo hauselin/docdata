@@ -3,14 +3,19 @@
 
 # docdata
 
-docdata is an R package that generates documentation for datasets
-semi-automatically. It streamlines the process of documenting
-when/where/who etc. a dataset is from. It also standardizes
-documentation. Ultimately, every dataset (e.g., csv/txt file) with
-tabular data should have a corresponding documentation file that
-describes the rows and columns of that dataset and other information
-about the dataset. Ultimately, docdata aims to make data docmentation
-and sharing easier.
+docdata is an R package that **generates documentation for datasets
+semi-automatically**. It streamlines the process of documenting
+when/where/who etc. a dataset is from. It also **standardizes
+documentation**.
+
+Ideally, every dataset (e.g., csv/txt file) with tabular data should
+have a corresponding documentation file that describes the rows and
+columns of that dataset and other information about the dataset.
+`docdata` helps you accomplish all that.
+
+`docdata` aims to make data docmentation and sharing easier. It helps
+you avoid being **that** person who shares data that no one else can use
+because nothing was documented.
 
 ## Installation
 
