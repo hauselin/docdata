@@ -5,12 +5,12 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vignette Title • docdata</title>
+<title>How to use generate data documentation with doc_data • docdata</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
-<script src="../pkgdown.js"></script><meta property="og:title" content="Vignette Title">
+<script src="../pkgdown.js"></script><meta property="og:title" content="How to use generate data documentation with doc_data">
 <meta property="og:description" content="">
 <meta name="twitter:card" content="summary">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
@@ -54,7 +54,7 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
-      <a href="../articles/how-to-use-this-package.html">Vignette Title</a>
+      <a href="../articles/how-to-use-this-package.html">How to use generate data documentation with doc_data</a>
     </li>
   </ul>
 </li>
@@ -79,8 +79,8 @@
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1>Vignette Title</h1>
-                        <h4 class="author">Vignette Author</h4>
+      <h1>How to use generate data documentation with doc_data</h1>
+                        <h4 class="author">Hause Lin</h4>
             
             <h4 class="date">2019-12-08</h4>
       
@@ -91,210 +91,125 @@
 
     
     
-<p>Vignettes are long form documentation commonly included in packages. Because they are part of the distribution of the package, they need to be as compact as possible. The <code>html_vignette</code> output type provides a custom style sheet (and tweaks some options) to ensure that the resulting html is as small as possible. The <code>html_vignette</code> format:</p>
+<div id="docdata" class="section level1">
+<h1 class="hasAnchor">
+<a href="#docdata" class="anchor"></a>docdata</h1>
+<p>docdata is an R package that generates documentation for datasets semi-automatically. It streamlines the process of documenting when/where/who etc. a dataset is from. It also standardizes documentation. Ultimately, every dataset (e.g., csv/txt file) with tabular data should have a corresponding documentation file that describes the rows and columns of that dataset and other information about the dataset. Ultimately, docdata aims to make data docmentation and sharing easier.</p>
+<div id="installation" class="section level2">
+<h2 class="hasAnchor">
+<a href="#installation" class="anchor"></a>Installation</h2>
+<p>To install the package, type the following commands into the R console:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="co"># install.packages("devtools")</span></a>
+<a class="sourceLine" id="cb1-2" data-line-number="2">devtools<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/devtools/man/remote-reexports.html">install_github</a></span>(<span class="st">"hauselin/docdata"</span>) <span class="co"># you might have to install devtools first (see above)</span></a></code></pre></div>
+</div>
+<div id="how-to-use-docdata" class="section level2">
+<h2 class="hasAnchor">
+<a href="#how-to-use-docdata" class="anchor"></a>How to use docdata?</h2>
+<p><strong>Step 1: use <code><a href="../reference/doc_data.html">doc_data()</a></code> to generate a documentation (markdown file)</strong></p>
 <ul>
-<li>Never uses retina figures</li>
-<li>Has a smaller default figure size</li>
-<li>Uses a custom CSS stylesheet instead of the default Twitter Bootstrap style</li>
+<li>Example: <code><a href="../reference/doc_data.html">doc_data(mtcars.csv)</a></code> (assuming <code>mtcars.csv</code> is a dataset in your working directory.)</li>
 </ul>
-<div id="vignette-info" class="section level2">
-<h2 class="hasAnchor">
-<a href="#vignette-info" class="anchor"></a>Vignette Info</h2>
-<p>Note the various macros within the <code>vignette</code> section of the metadata block above. These are required in order to instruct R how to build the vignette. Note that you should change the <code>title</code> field and the <code>\VignetteIndexEntry</code> to match the title of your vignette.</p>
+<p><strong>Step 2: use <code><a href="../reference/disp_doc.html">disp_doc()</a></code> to print the doc in your console</strong></p>
+<ul>
+<li>Example: <code><a href="../reference/disp_doc.html">disp_doc(mtcars.csv)</a></code> or <code><a href="../reference/disp_doc.html">disp_doc(mtcars.md)</a></code>
+</li>
+</ul>
+<p><strong>Step 3: use <code><a href="../reference/doc_open.html">doc_open()</a></code> to open the doc to edit it</strong></p>
+<ul>
+<li>Example: <code><a href="../reference/doc_open.html">doc_open(mtcars.csv)</a></code> or <code><a href="../reference/doc_open.html">doc_open(mtcars.md)</a></code>
+</li>
+</ul>
+<p><strong>Step 4: use <code><a href="../reference/doc_refresh.html">doc_refresh()</a></code> to refresh/update your documentation</strong></p>
+<ul>
+<li>Example: <code><a href="../reference/doc_refresh.html">doc_refresh(mtcars.csv)</a></code> or <code><a href="../reference/doc_refresh.html">doc_refresh(mtcars.md)</a></code>
+</li>
+</ul>
+<p><strong>Step 5: share your dataset and documentation file with others or your future self(!)</strong></p>
 </div>
-<div id="styles" class="section level2">
+<div id="step-1-doc_data" class="section level2">
 <h2 class="hasAnchor">
-<a href="#styles" class="anchor"></a>Styles</h2>
-<p>The <code>html_vignette</code> template includes a basic CSS theme. To override this theme you can specify your own CSS in the document metadata as follows:</p>
-<pre><code>output: 
-  rmarkdown::html_vignette:
-    css: mystyles.css</code></pre>
+<a href="#step-1-doc_data" class="anchor"></a>Step 1: <code>doc_data()</code>
+</h2>
+<p><code><a href="../reference/doc_data.html">doc_data()</a></code> generates a markdown file that looks like the one shown below. If you dataset is <code>mtcars.csv</code>, the markdown file will be named <code>mtcars.md</code> and will be located in the same directory as <code>mtcars.csv</code>.</p>
+<p>Example usage: <code><a href="../reference/doc_data.html">doc_data(mtcars.csv)</a></code> (assuming <code>mtcars.csv</code> is a dataset in your working directory.)</p>
+<pre><code>A GitHub flavored Markdown textfile documenting a dataset.
+
+Generated using docdata package on 2019-12-08 12:50:50.
+To cite this package, type citations("docdata") in console.
+
+## Data source
+
+mtcars.csv
+
+## About this file
+
+* What (is the data): 
+* Who (generated this documentation): 
+* Who (collected the data):
+* When (was the data collected): 
+* Where (was the data collected):
+* How (was the data collected):
+* Why (was the data collected): 
+
+## Additional information
+
+* Contact: XXX@XXX.com
+* Registration: https://osf.io
+
+## Columns
+
+* Rows: 32
+* Columns: 4
+
+| Column  | Type     | Description |
+| ------- | -------- | ----------- |
+| mpg     | numeric  |             |
+| cyl     | numeric  |             |
+| disp    | numeric  |             |
+| hp      | numeric  |             |
+
+End of documentation.
+</code></pre>
 </div>
-<div id="figures" class="section level2">
+<div id="step-2-disp_doc" class="section level2">
 <h2 class="hasAnchor">
-<a href="#figures" class="anchor"></a>Figures</h2>
-<p>The figure sizes have been customised so that you can easily put two images side-by-side.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/graphics/plot.html">plot</a></span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>)</a>
-<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="kw"><a href="https://rdrr.io/r/graphics/plot.html">plot</a></span>(<span class="dv">10</span><span class="op">:</span><span class="dv">1</span>)</a></code></pre></div>
-<p><img src="how-to-use-this-package_files/figure-html/unnamed-chunk-1-1.png" width="700"><img src="how-to-use-this-package_files/figure-html/unnamed-chunk-1-2.png" width="700"></p>
-<p>You can enable figure captions by <code>fig_caption: yes</code> in YAML:</p>
-<pre><code>output:
-  rmarkdown::html_vignette:
-    fig_caption: yes</code></pre>
-<p>Then you can use the chunk option <code>fig.cap = "Your figure caption."</code> in <strong>knitr</strong>.</p>
+<a href="#step-2-disp_doc" class="anchor"></a>Step 2: <code>disp_doc()</code>
+</h2>
+<p><code><a href="../reference/disp_doc.html">disp_doc()</a></code> prints the documentation in your console. An example (truncated) output is shown below.</p>
+<p>Example usage: <code><a href="../reference/disp_doc.html">disp_doc(mtcars.csv)</a></code> or <code><a href="../reference/disp_doc.html">disp_doc(mtcars.md)</a></code></p>
+<pre><code>--- DOCUMENTATION BEGIN ---
+    1     A GitHub flavored Markdown textfile documenting a dataset.
+    2     
+    3     Generated using docdata package on 2019-12-08 12:50:50.
+    4     To cite this package, type citations("docdata") in console.
+    5     
+    6     ## Data source
+    7     
+    8     mtcars.csv
+    9     
+   10     ## About this file
+   ...
+--- DOCUMENTATION END ---</code></pre>
 </div>
-<div id="more-examples" class="section level2">
+<div id="step-3-doc_open" class="section level2">
 <h2 class="hasAnchor">
-<a href="#more-examples" class="anchor"></a>More Examples</h2>
-<p>You can write math expressions, e.g. <span class="math inline">\(Y = X\beta + \epsilon\)</span>, footnotes<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>, and tables, e.g. using <code><a href="https://rdrr.io/pkg/knitr/man/kable.html">knitr::kable()</a></code>.</p>
-<table class="table">
-<thead><tr class="header">
-<th></th>
-<th align="right">mpg</th>
-<th align="right">cyl</th>
-<th align="right">disp</th>
-<th align="right">hp</th>
-<th align="right">drat</th>
-<th align="right">wt</th>
-<th align="right">qsec</th>
-<th align="right">vs</th>
-<th align="right">am</th>
-<th align="right">gear</th>
-<th align="right">carb</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td>Mazda RX4</td>
-<td align="right">21.0</td>
-<td align="right">6</td>
-<td align="right">160.0</td>
-<td align="right">110</td>
-<td align="right">3.90</td>
-<td align="right">2.620</td>
-<td align="right">16.46</td>
-<td align="right">0</td>
-<td align="right">1</td>
-<td align="right">4</td>
-<td align="right">4</td>
-</tr>
-<tr class="even">
-<td>Mazda RX4 Wag</td>
-<td align="right">21.0</td>
-<td align="right">6</td>
-<td align="right">160.0</td>
-<td align="right">110</td>
-<td align="right">3.90</td>
-<td align="right">2.875</td>
-<td align="right">17.02</td>
-<td align="right">0</td>
-<td align="right">1</td>
-<td align="right">4</td>
-<td align="right">4</td>
-</tr>
-<tr class="odd">
-<td>Datsun 710</td>
-<td align="right">22.8</td>
-<td align="right">4</td>
-<td align="right">108.0</td>
-<td align="right">93</td>
-<td align="right">3.85</td>
-<td align="right">2.320</td>
-<td align="right">18.61</td>
-<td align="right">1</td>
-<td align="right">1</td>
-<td align="right">4</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td>Hornet 4 Drive</td>
-<td align="right">21.4</td>
-<td align="right">6</td>
-<td align="right">258.0</td>
-<td align="right">110</td>
-<td align="right">3.08</td>
-<td align="right">3.215</td>
-<td align="right">19.44</td>
-<td align="right">1</td>
-<td align="right">0</td>
-<td align="right">3</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td>Hornet Sportabout</td>
-<td align="right">18.7</td>
-<td align="right">8</td>
-<td align="right">360.0</td>
-<td align="right">175</td>
-<td align="right">3.15</td>
-<td align="right">3.440</td>
-<td align="right">17.02</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">3</td>
-<td align="right">2</td>
-</tr>
-<tr class="even">
-<td>Valiant</td>
-<td align="right">18.1</td>
-<td align="right">6</td>
-<td align="right">225.0</td>
-<td align="right">105</td>
-<td align="right">2.76</td>
-<td align="right">3.460</td>
-<td align="right">20.22</td>
-<td align="right">1</td>
-<td align="right">0</td>
-<td align="right">3</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td>Duster 360</td>
-<td align="right">14.3</td>
-<td align="right">8</td>
-<td align="right">360.0</td>
-<td align="right">245</td>
-<td align="right">3.21</td>
-<td align="right">3.570</td>
-<td align="right">15.84</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">3</td>
-<td align="right">4</td>
-</tr>
-<tr class="even">
-<td>Merc 240D</td>
-<td align="right">24.4</td>
-<td align="right">4</td>
-<td align="right">146.7</td>
-<td align="right">62</td>
-<td align="right">3.69</td>
-<td align="right">3.190</td>
-<td align="right">20.00</td>
-<td align="right">1</td>
-<td align="right">0</td>
-<td align="right">4</td>
-<td align="right">2</td>
-</tr>
-<tr class="odd">
-<td>Merc 230</td>
-<td align="right">22.8</td>
-<td align="right">4</td>
-<td align="right">140.8</td>
-<td align="right">95</td>
-<td align="right">3.92</td>
-<td align="right">3.150</td>
-<td align="right">22.90</td>
-<td align="right">1</td>
-<td align="right">0</td>
-<td align="right">4</td>
-<td align="right">2</td>
-</tr>
-<tr class="even">
-<td>Merc 280</td>
-<td align="right">19.2</td>
-<td align="right">6</td>
-<td align="right">167.6</td>
-<td align="right">123</td>
-<td align="right">3.92</td>
-<td align="right">3.440</td>
-<td align="right">18.30</td>
-<td align="right">1</td>
-<td align="right">0</td>
-<td align="right">4</td>
-<td align="right">4</td>
-</tr>
-</tbody>
-</table>
-<p>Also a quote using <code><a href="https://rdrr.io/r/base/Comparison.html">&gt;</a></code>:</p>
-<blockquote>
-<p>“He who gives up [code] safety for [code] speed deserves neither.” (<a href="https://twitter.com/hadleywickham/status/504368538874703872">via</a>)</p>
-</blockquote>
+<a href="#step-3-doc_open" class="anchor"></a>Step 3: <code>doc_open()</code>
+</h2>
+<p><code><a href="../reference/doc_open.html">doc_open()</a></code> opens the documentation in R or RStudio so you can edit it and fill in the details.</p>
+<p>Example usage: <code><a href="../reference/doc_open.html">doc_open(mtcars.csv)</a></code> or <code><a href="../reference/doc_open.html">doc_open(mtcars.md)</a></code></p>
 </div>
-<div class="footnotes">
-<hr>
-<ol>
-<li id="fn1"><p>A footnote here.<a href="#fnref1" class="footnote-back">↩</a></p></li>
-</ol>
+<div id="step-4-doc_refresh" class="section level2">
+<h2 class="hasAnchor">
+<a href="#step-4-doc_refresh" class="anchor"></a>Step 4: <code>doc_refresh()</code>
+</h2>
+<p>If your documentation looks messy after you’ve edited it (especially if the description column isn’t aligned), run <code><a href="../reference/doc_refresh.html">doc_refresh()</a></code> to clean it up. Or if the columns/rows of your dataset have changed since the last time the documentation was generated, run this function again to update your documentation, which merges your previous documentation with a refreshed/updated one.</p>
+<p>Example usage: <code><a href="../reference/doc_refresh.html">doc_refresh(mtcars.csv)</a></code> or <code><a href="../reference/doc_refresh.html">doc_refresh(mtcars.md)</a></code></p>
+</div>
+<div id="step-5-share-your-dataset-documentation" class="section level2">
+<h2 class="hasAnchor">
+<a href="#step-5-share-your-dataset-documentation" class="anchor"></a>Step 5: Share your dataset + documentation</h2>
+<p>Whenever you share your data with someone (including your future self?), make sure to also share the corresponding documentation.</p>
+</div>
 </div>
   </div>
 
@@ -304,10 +219,17 @@
       <h2 class="hasAnchor">
 <a href="#tocnav" class="anchor"></a>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
-<li><a href="#vignette-info">Vignette Info</a></li>
-      <li><a href="#styles">Styles</a></li>
-      <li><a href="#figures">Figures</a></li>
-      <li><a href="#more-examples">More Examples</a></li>
+<li>
+<a href="#docdata">docdata</a><ul class="nav nav-pills nav-stacked">
+<li><a href="#installation">Installation</a></li>
+      <li><a href="#how-to-use-docdata">How to use docdata?</a></li>
+      <li><a href="#step-1-doc_data">Step 1: <code>doc_data()</code></a></li>
+      <li><a href="#step-2-disp_doc">Step 2: <code>disp_doc()</code></a></li>
+      <li><a href="#step-3-doc_open">Step 3: <code>doc_open()</code></a></li>
+      <li><a href="#step-4-doc_refresh">Step 4: <code>doc_refresh()</code></a></li>
+      <li><a href="#step-5-share-your-dataset-documentation">Step 5: Share your dataset + documentation</a></li>
+      </ul>
+</li>
       </ul>
 </div>
       </div>
