@@ -18,9 +18,7 @@ markdown file with the same name as input x in the same directory
 Generates documentation for a dataset
 }
 \examples{
-\donttest{
-doc_data("mtcars.csv")
-}
+\dontrun{doc_data("./data/mcars.csv")}
 }
 \author{
 Hause Lin

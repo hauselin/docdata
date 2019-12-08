@@ -12,9 +12,7 @@
 #' @import data.table
 #' @import stringi
 #' @examples
-#' \donttest{
-#' doc_data("mtcars.csv")
-#' }
+#' \dontrun{doc_data("./data/mcars.csv")}
 #' @export
 #'
 doc_data <- function(x, overwrite = FALSE) {
@@ -30,6 +28,9 @@ doc_data <- function(x, overwrite = FALSE) {
 
     # read template md doc
     # template_doc <- read_doc_md("./inst/extdata/template.md")
+    # save(template_doc, file = "./R/sysdata.rda", version = 2)
+    # use_data(template_doc, internal = TRUE, overwite = TRUE)
+    # save(template_doc, file = "./data/sysdata.RData")
     # save(template_doc, file = "./R/sysdata.rda")
     if (overwrite) {
         existing_doc <- read_doc_md(outfile)

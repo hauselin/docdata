@@ -8,9 +8,7 @@
 #' @usage disp_doc(x)
 #' @return prints data documentation to the console
 #' @examples
-#' \donttest{
-#' disp_doc("mtcars.csv")
-#' }
+#' \dontrun{disp_doc("mcars.csv")}
 #' @export
 disp_doc <- function(x) {
     if (!is.character(x)) { # if non-char provided, ask to specify path

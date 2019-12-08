@@ -7,9 +7,7 @@
 #' @author Hause Lin
 #' @usage doc_open(md_file)
 #' @examples
-#' \donttest{
-#' doc_open("mtcars.md")
-#' }
+#' \dontrun{doc_open("mcars.md")}
 #' @export
 doc_open <- function(md_file) {
     md_file <- generate_md_string(md_file)

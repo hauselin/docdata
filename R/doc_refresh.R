@@ -7,9 +7,7 @@
 #' @author Hause Lin
 #' @usage doc_refresh(file)
 #' @examples
-#' \donttest{
-#' doc_refresh("mtcars.csv")
-#' }
+#' \dontrun{doc_refresh("mcars.csv")}
 #' @export
 doc_refresh <- function(file) {
     message("Refreshing and updating docs...")

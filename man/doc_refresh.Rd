@@ -13,9 +13,7 @@ doc_refresh(file)
 Update/refresh existing documentation that is outdated (maybe because dataset has been updated) or if you need to tidy up your existing documentation.
 }
 \examples{
-\donttest{
-doc_refresh("mtcars.csv")
-}
+\dontrun{doc_refresh("mcars.csv")}
 }
 \author{
 Hause Lin

@@ -13,9 +13,7 @@ doc_open(md_file)
 Opens a markdown documentation file in R or RStudio. A wrapper function for utils::file.exists()
 }
 \examples{
-\donttest{
-doc_open("mtcars.md")
-}
+\dontrun{doc_open("mcars.md")}
 }
 \author{
 Hause Lin

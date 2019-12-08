@@ -1,7 +1,7 @@
 Package: docdata
 Type: Package
 Title: Generates documentation for datasets
-Version: 0.0.0.9003
+Version: 0.0.0.9001
 Authors@R: 
     person(given = "Hause",
            family = "Lin",
@@ -18,3 +18,5 @@ Imports:
     data.table,
     stringi
 RoxygenNote: 6.1.1
+Suggests: knitr, rmarkdown
+VignetteBuilder: knitr
