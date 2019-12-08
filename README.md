@@ -70,7 +70,7 @@ dataset in your working directory.)
 
     A GitHub flavored Markdown textfile documenting a dataset.
     
-    Generated using docdata package on 2019-12-08 12:50:50.
+    Generated using [docdata package](https://hauselin.github.io/docdata/) on 2019-12-08 18:16:46.
     To cite this package, type citations("docdata") in console.
     
     ## Data source
