@@ -32,6 +32,16 @@ read_doc_md <- function(x) {
 
 #' @keywords internal
 get_datasource_extension <- function(x) {
+
+  # get md filename
+  idx <- gregexpr(pattern = ".", text = x, fixed = TRUE)[[1]]
+  if (idx[1] != -1) {
+    idx <- idx[[length(idx)]]
+    x <- paste0(substring(text = x, first = 1, last = idx), "md")
+  } else {
+    x <- paste0(x, "md")
+  }
+
   md <- read_doc_md(x)
   idx <- grep(pattern = "## Data source", x = md, fixed = TRUE) + 2
   datasource <- md[idx]
@@ -79,9 +89,15 @@ string2dat <- function(x) {
 #' @keywords internal
 dat2string <- function(datainfo) {
 
-    datainfo$Column <- gsub(pattern = " ", replacement = "", datainfo$Column)
-    datainfo$Type <- gsub(pattern = " ", replacement = "", datainfo$Type)
-    datainfo$Description <- gsub(pattern = " ", replacement = "", datainfo$Description)
+    # trim whitespace before/after
+    datainfo$Column <- trimws(datainfo$Column)
+    datainfo$Type <- trimws(datainfo$Type)
+    datainfo$Description <- trimws(datainfo$Description)
+
+    # remove extra spaces
+    datainfo$Column <- gsub(pattern = "  ", replacement = " ", datainfo$Column)
+    datainfo$Type <- gsub(pattern = "  ", replacement = " ", datainfo$Type)
+    datainfo$Description <- gsub(pattern = "  ", replacement = " ", datainfo$Description)
 
     cpad <- max(sapply(datainfo$Column, nchar))
     columns <- stringi::stri_pad(datainfo$Column, max(c(cpad + 1), 7), "right")

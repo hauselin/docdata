@@ -7,7 +7,7 @@
 doc_data(x, overwrite = FALSE)
 }
 \arguments{
-\item{x}{path/directory to dataset (e.g., csv/txt file)}
+\item{x}{dataset filepath (e.g., csv/txt file)}
 
 \item{overwrite}{whether to overwrite documentation (defaults to FALSE)}
 }

@@ -2,7 +2,7 @@
 #' @name doc_data
 #'
 #' @description Generates documentation for a dataset
-#' @param x path/directory to dataset (e.g., csv/txt file)
+#' @param x dataset filepath (e.g., csv/txt file)
 #' @param overwrite whether to overwrite documentation (defaults to FALSE)
 #'
 #' @author Hause Lin
@@ -16,6 +16,11 @@
 #' @export
 #'
 doc_data <- function(x, overwrite = FALSE) {
+
+    if (!is.character(x) | !file.exists(x)) {
+        stop("Input must be an existing filepath!")
+    }
+    # stopifnot(is.character(x))
 
     # generate doc md outpule file
     outfile <- generate_md_string(x)
@@ -41,6 +46,8 @@ doc_data <- function(x, overwrite = FALSE) {
     if (idx[1] != -1) {
         idx <- idx[[length(idx)]]
         filename <- substring(text = x, first = idx + 1)
+    } else {
+        filename <- x
     }
 
     # read data

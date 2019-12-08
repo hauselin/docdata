@@ -2,7 +2,7 @@
 #' @name doc_refresh
 #'
 #' @description Update/refresh existing documentation that is outdated (maybe because dataset has been updated) or if you need to tidy up your existing documentation.
-#' @param x path/directory to documentation or dataset (e.g., md/csv/txt file)
+#' @param x filepath (e.g., md/csv/txt file)
 #'
 #' @author Hause Lin
 #' @usage doc_refresh(x)

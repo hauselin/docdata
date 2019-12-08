@@ -14,6 +14,6 @@ doc_open <- function(x) {
     if (file.exists(x)) {
         utils::file.edit(x)
     } else {
-        stop("Doc doesn't exist!")
+        stop("Doc doesn't exist! Use doc_data() first.")
     }
 }
