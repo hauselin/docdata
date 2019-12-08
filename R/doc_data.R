@@ -75,7 +75,7 @@ doc_data <- function(x, overwrite = FALSE) {
         template_doc <- c(part1, existing, part2)
     }
 
-    # convert data desc to md table
+    # convert data type and desc to md table
     col_types <- data.table::data.table(Column = names(temp_dat), Type = apply(temp_dat, 2, class), Description = "")
     md_table <- dat2string(col_types)
     if (overwrite) {
@@ -87,6 +87,7 @@ doc_data <- function(x, overwrite = FALSE) {
             temp_c1 <- gsub(" ", "", c1$Column[i])
             if (temp_c1 %in% gsub(" ", "", c2$Column)) {
                 temp_c2_idx <- which(gsub(" ", "", c2$Column) == temp_c1)
+                c2[temp_c2_idx, "Type"] <- c1[i, "Type"]
                 c2[temp_c2_idx, "Description"] <- c1[i, "Description"]
             }
         }
