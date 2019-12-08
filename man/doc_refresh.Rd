@@ -4,10 +4,10 @@
 \alias{doc_refresh}
 \title{Refreshes and updates existing documentation for a dataset}
 \usage{
-doc_refresh(file)
+doc_refresh(x)
 }
 \arguments{
-\item{file}{path/directory to dataset (e.g., csv/txt file)}
+\item{x}{path/directory to documentation or dataset (e.g., md/csv/txt file)}
 }
 \description{
 Update/refresh existing documentation that is outdated (maybe because dataset has been updated) or if you need to tidy up your existing documentation.

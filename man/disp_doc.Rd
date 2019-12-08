@@ -7,7 +7,7 @@
 disp_doc(x)
 }
 \arguments{
-\item{x}{path/directory to dataset}
+\item{x}{path/directory to dataset (e.g., md/csv/txt file)}
 }
 \value{
 prints data documentation to the console

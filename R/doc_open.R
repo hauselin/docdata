@@ -2,17 +2,17 @@
 #' @name doc_open
 #'
 #' @description Opens a markdown documentation file in R or RStudio. A wrapper function for utils::file.exists()
-#' @param md_file markdown document filepath
+#' @param x filepath (e.g., md/txt/csv)
 #'
 #' @author Hause Lin
-#' @usage doc_open(md_file)
+#' @usage doc_open(x)
 #' @examples
 #' \dontrun{doc_open("mcars.md")}
 #' @export
-doc_open <- function(md_file) {
-    md_file <- generate_md_string(md_file)
-    if (file.exists(md_file)) {
-        utils::file.edit(md_file)
+doc_open <- function(x) {
+    x <- generate_md_string(x)
+    if (file.exists(x)) {
+        utils::file.edit(x)
     } else {
         stop("Doc doesn't exist!")
     }

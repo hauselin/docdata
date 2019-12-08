@@ -30,6 +30,17 @@ read_doc_md <- function(x) {
     return(linn)
 }
 
+#' @keywords internal
+get_datasource_extension <- function(x) {
+  md <- read_doc_md(x)
+  idx <- grep(pattern = "## Data source", x = md, fixed = TRUE) + 2
+  datasource <- md[idx]
+  idx <- gregexpr(pattern = ".", text = datasource, fixed = TRUE)[[1]]
+  idx <- idx[[length(idx)]]
+  extension <- substring(text = datasource, first = idx)
+  extension
+}
+
 #' @import data.table
 #' @import stringi
 #' @keywords internal

@@ -4,10 +4,10 @@
 \alias{doc_open}
 \title{Open documentation markdown file in R or RStudio}
 \usage{
-doc_open(md_file)
+doc_open(x)
 }
 \arguments{
-\item{md_file}{markdown document filepath}
+\item{x}{filepath (e.g., md/txt/csv)}
 }
 \description{
 Opens a markdown documentation file in R or RStudio. A wrapper function for utils::file.exists()

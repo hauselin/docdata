@@ -80,16 +80,114 @@
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
 <p>To install the package, type the following commands into the R console:</p>
-<pre><code><a href="https://rdrr.io/pkg/devtools/man/remote-reexports.html"># install.packages("devtools")
-devtools::install_github("hauselin/docdata") # you might have to install devtools first (see above)</a></code></pre>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="co"># install.packages("devtools")</span></a>
+<a class="sourceLine" id="cb1-2" data-line-number="2">devtools<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/devtools/man/remote-reexports.html">install_github</a></span>(<span class="st">"hauselin/docdata"</span>) <span class="co"># you might have to install devtools first (see above)</span></a></code></pre></div>
 </div>
 <div id="how-to-use-docdata" class="section level2">
 <h2 class="hasAnchor">
 <a href="#how-to-use-docdata" class="anchor"></a>How to use docdata?</h2>
-<p>Step 1: use <code><a href="reference/doc_data.html">doc_data()</a></code> to generate a documentation (markdown file)</p>
-<p>Step 2: use <code><a href="reference/disp_doc.html">disp_doc()</a></code> to view the doc</p>
-<p>Step 3: use <code><a href="reference/doc_open.html">doc_open()</a></code> to open the doc to edit it</p>
-<p>Step 4: use <code><a href="reference/doc_refresh.html">doc_refresh()</a></code> to refresh/update your documentation</p>
+<p><strong>Step 1: use <code><a href="reference/doc_data.html">doc_data()</a></code> to generate a documentation (markdown file)</strong></p>
+<ul>
+<li>Example: <code><a href="reference/doc_data.html">doc_data(mtcars.csv)</a></code> (assuming <code>mtcars.csv</code> is a dataset in your working directory.)</li>
+</ul>
+<p><strong>Step 2: use <code><a href="reference/disp_doc.html">disp_doc()</a></code> to print the doc in your console</strong></p>
+<ul>
+<li>Example: <code><a href="reference/disp_doc.html">disp_doc(mtcars.csv)</a></code> or <code><a href="reference/disp_doc.html">disp_doc(mtcars.md)</a></code>
+</li>
+</ul>
+<p><strong>Step 3: use <code><a href="reference/doc_open.html">doc_open()</a></code> to open the doc to edit it</strong></p>
+<ul>
+<li>Example: <code><a href="reference/doc_open.html">doc_open(mtcars.csv)</a></code> or <code><a href="reference/doc_open.html">doc_open(mtcars.md)</a></code>
+</li>
+</ul>
+<p><strong>Step 4: use <code><a href="reference/doc_refresh.html">doc_refresh()</a></code> to refresh/update your documentation</strong></p>
+<ul>
+<li>Example: <code><a href="reference/doc_refresh.html">doc_refresh(mtcars.csv)</a></code> or <code><a href="reference/doc_refresh.html">doc_refresh(mtcars.md)</a></code>
+</li>
+</ul>
+<p><strong>Step 5: share your dataset and documentation file with others or your future self(!)</strong></p>
+<div id="step-1-doc_data" class="section level3">
+<h3 class="hasAnchor">
+<a href="#step-1-doc_data" class="anchor"></a>Step 1: <code>doc_data()</code>
+</h3>
+<p><code><a href="reference/doc_data.html">doc_data()</a></code> generates a markdown file that looks like the one shown below. If you dataset is <code>mtcars.csv</code>, the markdown file will be named <code>mtcars.md</code> and will be located in the same directory as <code>mtcars.csv</code>.</p>
+<p>Example usage: <code><a href="reference/doc_data.html">doc_data(mtcars.csv)</a></code> (assuming <code>mtcars.csv</code> is a dataset in your working directory.)</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode R"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">A GitHub flavored Markdown textfile documenting a dataset.</a>
+<a class="sourceLine" id="cb2-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb2-3" data-line-number="3">Generated using docdata package on <span class="dv">2019-12-08</span> <span class="dv">12</span><span class="op">:</span><span class="dv">50</span><span class="op">:</span><span class="fl">50.</span></a>
+<a class="sourceLine" id="cb2-4" data-line-number="4">To cite this package, type <span class="kw">citations</span>(<span class="st">"docdata"</span>) <span class="cf">in</span> console.</a>
+<a class="sourceLine" id="cb2-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb2-6" data-line-number="6"><span class="co">## Data source</span></a>
+<a class="sourceLine" id="cb2-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb2-8" data-line-number="8">mtcars.csv</a>
+<a class="sourceLine" id="cb2-9" data-line-number="9"></a>
+<a class="sourceLine" id="cb2-10" data-line-number="10"><span class="co">## About this file</span></a>
+<a class="sourceLine" id="cb2-11" data-line-number="11"></a>
+<a class="sourceLine" id="cb2-12" data-line-number="12"><span class="op">*</span><span class="st"> </span><span class="kw">What</span> (is the data)<span class="op">:</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb2-13" data-line-number="13"><span class="er">*</span><span class="st"> </span><span class="kw">Who</span> (generated this documentation)<span class="op">:</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb2-14" data-line-number="14"><span class="er">*</span><span class="st"> </span><span class="kw">Who</span> (collected the data)<span class="op">:</span></a>
+<a class="sourceLine" id="cb2-15" data-line-number="15"><span class="er">*</span><span class="st"> </span><span class="kw">When</span> (was the data collected)<span class="op">:</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb2-16" data-line-number="16"><span class="er">*</span><span class="st"> </span><span class="kw">Where</span> (was the data collected)<span class="op">:</span></a>
+<a class="sourceLine" id="cb2-17" data-line-number="17"><span class="er">*</span><span class="st"> </span><span class="kw">How</span> (was the data collected)<span class="op">:</span></a>
+<a class="sourceLine" id="cb2-18" data-line-number="18"><span class="er">*</span><span class="st"> </span><span class="kw">Why</span> (was the data collected)<span class="op">:</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb2-19" data-line-number="19"></a>
+<a class="sourceLine" id="cb2-20" data-line-number="20"><span class="co">## Additional information</span></a>
+<a class="sourceLine" id="cb2-21" data-line-number="21"></a>
+<a class="sourceLine" id="cb2-22" data-line-number="22"><span class="er">*</span><span class="st"> </span>Contact<span class="op">:</span><span class="st"> </span>XXX<span class="op">@</span>XXX.com</a>
+<a class="sourceLine" id="cb2-23" data-line-number="23"><span class="op">*</span><span class="st"> </span>Registration<span class="op">:</span><span class="st"> </span>https<span class="op">:</span><span class="er">//</span>osf.io</a>
+<a class="sourceLine" id="cb2-24" data-line-number="24"></a>
+<a class="sourceLine" id="cb2-25" data-line-number="25"><span class="co">## Columns</span></a>
+<a class="sourceLine" id="cb2-26" data-line-number="26"></a>
+<a class="sourceLine" id="cb2-27" data-line-number="27"><span class="op">*</span><span class="st"> </span>Rows<span class="op">:</span><span class="st"> </span><span class="dv">32</span></a>
+<a class="sourceLine" id="cb2-28" data-line-number="28"><span class="op">*</span><span class="st"> </span>Columns<span class="op">:</span><span class="st"> </span><span class="dv">11</span></a>
+<a class="sourceLine" id="cb2-29" data-line-number="29"></a>
+<a class="sourceLine" id="cb2-30" data-line-number="30"><span class="op">|</span><span class="st"> </span>Column  <span class="op">|</span><span class="st"> </span>Type     <span class="op">|</span><span class="st"> </span>Description <span class="op">|</span></a>
+<a class="sourceLine" id="cb2-31" data-line-number="31"><span class="er">|</span><span class="st"> </span><span class="op">-------</span><span class="st"> </span><span class="er">|</span><span class="st"> </span><span class="op">--------</span><span class="st"> </span><span class="er">|</span><span class="st"> </span><span class="op">-----------</span><span class="st"> </span><span class="er">|</span></a>
+<a class="sourceLine" id="cb2-32" data-line-number="32"><span class="er">|</span><span class="st"> </span>mpg     <span class="op">|</span><span class="st"> </span>numeric  <span class="op">|</span><span class="st">             </span><span class="er">|</span></a>
+<a class="sourceLine" id="cb2-33" data-line-number="33"><span class="er">|</span><span class="st"> </span>cyl     <span class="op">|</span><span class="st"> </span>numeric  <span class="op">|</span><span class="st">             </span><span class="er">|</span></a>
+<a class="sourceLine" id="cb2-34" data-line-number="34"><span class="er">|</span><span class="st"> </span>disp    <span class="op">|</span><span class="st"> </span>numeric  <span class="op">|</span><span class="st">             </span><span class="er">|</span></a>
+<a class="sourceLine" id="cb2-35" data-line-number="35"><span class="er">|</span><span class="st"> </span>hp      <span class="op">|</span><span class="st"> </span>numeric  <span class="op">|</span><span class="st">             </span><span class="er">|</span></a>
+<a class="sourceLine" id="cb2-36" data-line-number="36"></a>
+<a class="sourceLine" id="cb2-37" data-line-number="37">End of documentation.</a></code></pre></div>
+</div>
+<div id="step-2-disp_doc" class="section level3">
+<h3 class="hasAnchor">
+<a href="#step-2-disp_doc" class="anchor"></a>Step 2: <code>disp_doc()</code>
+</h3>
+<p><code><a href="reference/disp_doc.html">disp_doc()</a></code> prints the documentation in your console. An example (truncated) output is shown below.</p>
+<p>Example usage: <code><a href="reference/disp_doc.html">disp_doc(mtcars.csv)</a></code> or <code><a href="reference/disp_doc.html">disp_doc(mtcars.md)</a></code></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode R"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="op">---</span><span class="st"> </span>DOCUMENTATION BEGIN <span class="op">---</span></a>
+<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="st">    </span><span class="dv">1</span>     A GitHub flavored Markdown textfile documenting a dataset.</a>
+<a class="sourceLine" id="cb3-3" data-line-number="3">    <span class="dv">2</span>     </a>
+<a class="sourceLine" id="cb3-4" data-line-number="4">    <span class="dv">3</span>     Generated using docdata package on <span class="dv">2019-12-08</span> <span class="dv">12</span><span class="op">:</span><span class="dv">50</span><span class="op">:</span><span class="fl">50.</span></a>
+<a class="sourceLine" id="cb3-5" data-line-number="5">    <span class="dv">4</span>     To cite this package, type <span class="kw">citations</span>(<span class="st">"docdata"</span>) <span class="cf">in</span> console.</a>
+<a class="sourceLine" id="cb3-6" data-line-number="6">    <span class="dv">5</span>     </a>
+<a class="sourceLine" id="cb3-7" data-line-number="7">    <span class="dv">6</span>     <span class="co">## Data source</span></a>
+<a class="sourceLine" id="cb3-8" data-line-number="8">    <span class="dv">7</span>     </a>
+<a class="sourceLine" id="cb3-9" data-line-number="9">    <span class="dv">8</span>     mtcars.csv</a>
+<a class="sourceLine" id="cb3-10" data-line-number="10">    <span class="dv">9</span>     </a>
+<a class="sourceLine" id="cb3-11" data-line-number="11">   <span class="dv">10</span>     <span class="co">## About this file</span></a>
+<a class="sourceLine" id="cb3-12" data-line-number="12">   ...</a>
+<a class="sourceLine" id="cb3-13" data-line-number="13"><span class="op">---</span><span class="st"> </span>DOCUMENTATION END <span class="op">---</span></a></code></pre></div>
+</div>
+<div id="step-3-doc_open" class="section level3">
+<h3 class="hasAnchor">
+<a href="#step-3-doc_open" class="anchor"></a>Step 3: <code>doc_open()</code>
+</h3>
+<p><code><a href="reference/doc_open.html">doc_open()</a></code> opens the documentation in R or RStudio so you can edit it and fill in the details.</p>
+<p>Example usage: <code><a href="reference/doc_open.html">doc_open(mtcars.csv)</a></code> or <code><a href="reference/doc_open.html">doc_open(mtcars.md)</a></code></p>
+</div>
+<div id="step-4-doc_refresh" class="section level3">
+<h3 class="hasAnchor">
+<a href="#step-4-doc_refresh" class="anchor"></a>Step 4: <code>doc_refresh()</code>
+</h3>
+<p>If your documentation looks messy after you’ve edited it (especially if the description column isn’t aligned), run <code><a href="reference/doc_refresh.html">doc_refresh()</a></code> to clean it up. Or if the columns/rows of your dataset have changed since the last time the documentation was generated, run this function again to update your documentation, which merges your previous documentation with a refreshed/updated one.</p>
+<p>Example usage: <code><a href="reference/doc_refresh.html">doc_refresh(mtcars.csv)</a></code> or <code><a href="reference/doc_refresh.html">doc_refresh(mtcars.md)</a></code></p>
+</div>
+<div id="step-5-share-your-dataset-documentation" class="section level3">
+<h3 class="hasAnchor">
+<a href="#step-5-share-your-dataset-documentation" class="anchor"></a>Step 5: Share your dataset + documentation</h3>
+</div>
 </div>
 </div>
   </div>

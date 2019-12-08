@@ -22,7 +22,7 @@ doc_data <- function(x, overwrite = FALSE) {
 
     if (!overwrite) {
         if (file.exists(outfile)) {
-            stop("Doc already exists! Use doc_open instead.")
+            stop("Doc already exists! Use doc_open or doc_refresh instead.")
         }
     }
 
