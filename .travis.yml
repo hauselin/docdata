@@ -1,0 +1,15 @@
+# R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
+
+language: R
+cache: packages
+
+install:
+  - Rscript -e 'install.packages(c("stringi", "data.table", "covr", "testthat", "knitr", "rmarkdown"), repos = "http://cran.rstudio.com")'
+
+
+r_binary_packages:
+  - rmarkdown
+  - covr
+  - testthat
+  - data.table
+  - stringi
