@@ -4,7 +4,7 @@ generate_md_string <- function(x) {
     idx <- gregexpr(pattern = ".", text = x, fixed = TRUE)[[1]]
     idx <- idx[[length(idx)]]
     str2replace <- substring(text = x, first = idx)
-    markdown <- gsub(pattern = str2replace, replacement = ".md", x = x)
+    markdown <- gsub(pattern = str2replace, replacement = ".md", x = x, fixed = TRUE)
     return(markdown)
 }
 

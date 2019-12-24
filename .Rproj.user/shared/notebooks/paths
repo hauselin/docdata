@@ -1,5 +1,6 @@
 /Users/hause/Dropbox/Working Projects/R_packages/create_packages.Rmd="60144BC9"
 /Users/hause/Dropbox/Working Projects/R_packages/docdata/.Rbuildignore="D5604BAA"
+/Users/hause/Dropbox/Working Projects/R_packages/docdata/.travis.yml="2A5210F9"
 /Users/hause/Dropbox/Working Projects/R_packages/docdata/DESCRIPTION="258FF82D"
 /Users/hause/Dropbox/Working Projects/R_packages/docdata/NAMESPACE="D01CD1AD"
 /Users/hause/Dropbox/Working Projects/R_packages/docdata/R/disp_doc.R="F1926245"
@@ -7,5 +8,6 @@
 /Users/hause/Dropbox/Working Projects/R_packages/docdata/R/doc_refresh.R="332D7078"
 /Users/hause/Dropbox/Working Projects/R_packages/docdata/README.Rmd="9435D40F"
 /Users/hause/Dropbox/Working Projects/R_packages/docdata/README.md="FF6B7B74"
+/Users/hause/Dropbox/Working Projects/R_packages/docdata/appveyor.yml="C2D04729"
 /Users/hause/Dropbox/Working Projects/R_packages/docdata/man/doc_data.Rd="3CAAA6AE"
 /Users/hause/Dropbox/Working Projects/R_packages/docdata/vignettes/how-to-use-this-package.Rmd="6DF0BD39"
